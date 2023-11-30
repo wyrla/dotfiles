@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Catppuccin Latte",
+    "editor.fontFamily": "'Fira Code'",
+    "editor.fontLigatures": true,
+    "editor.wordWrap": "on",
+    "editor.bracketPairColorization.enabled": true,
+    "cSpell.language": "en,pt,pt_BR",
+    "code-runner.clearPreviousOutput": true,
+    "window.zoomLevel": 1,
+    "workbench.sideBar.location": "right"
+}
