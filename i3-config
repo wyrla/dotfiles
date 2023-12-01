@@ -150,7 +150,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -211,5 +211,39 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
 bar {
-        status_command i3status
+    colors {
+
+        background #2f343f
+        statusline #f2f2f2
+        separator #4b5262
+
+        # colour of border, background, and text
+        focused_workspace   #2f343f #bf616a #d8dee8
+        active_workspace    #2f343f #2f343f #d8dee8
+        inactive_workspace  #2f343f #2f343f #d8dee8
+        urgent_workspace    #2f343f #ebcb8b #2f343f
+    }
+    status_command i3status
 }
+
+
+# mode for leave menu
+set $leave_menu Leave Menu: (1)Lock, (2)Logout, (3)Suspend, (4)Hibernate, (5)Reboot, (6)Shutdown
+mode "$leave_menu" {
+    bindsym 1 exec --no-startup-id $myscripts/lock-session.sh, mode "default"
+    bindsym 2 exec --no-startup-id i3-msg exit, mode "default"
+    bindsym 3 exec --no-startup-id systemctl suspend, mode "default"
+    bindsym 4 exec --no-startup-id systemctl hibernate, mode "default"
+    bindsym 5 exec --no-startup-id systemctl reboot, mode "default"
+    bindsym 6 exec --no-startup-id systemctl poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "$leave_menu"
+
+#autostart
+exec --no-startup-id hsetroot -center ~/.wallpaper.png
+exec --no-startup-id xsettingsd &
+exec --no-startup-id compton -b
