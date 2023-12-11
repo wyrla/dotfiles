@@ -1,5 +1,5 @@
 general {
-        output_format = "i3bar"
+        output_format = "i:3bar"
         colors = false
         markup = pango
         interval = 1
@@ -14,28 +14,28 @@ order += "battery 1"
 order += "tztime local"
 
 cpu_temperature 0 {
-        format = "CPU: %degrees °C"
+        format = "CPU %degrees °C "
         path = "/sys/class/thermal/thermal_zone0/temp"
 }
 
 memory {
-        format = "RAM: %used"
+        format = "RAM %used"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }
 
 disk "/home" {
-        format = "HD: %free"
+        format = "💾: %free"
 }
 
 wireless wlp2s0 {
-        format_up = "W: (%quality at %essid, %bitrate)"
+        format_up = "📡 (%quality at %essid, %bitrate)"
         format_down = "W: down"
 }
 
 volume master {
-        format = "♪: %volume"
-        format_muted = "♪: muted"
+        format = "🔊: %volume"
+        format_muted = "🔇"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
@@ -45,17 +45,17 @@ volume master {
 battery 1 {
         format = "%status %percentage"
         format_down = "No battery"
-        status_chr = "⚡"
+        status_chr = "🔌"
         status_bat = "🔋"
         status_unk = "?"
-        status_full = "☻"
+        status_full = "⚡"
         path = "/sys/class/power_supply/BAT%d/uevent"
         low_threshold = 10
 }
 
 
 tztime local {
-        format = "%time"
+        format = "⌛: %time"
         format_time = "%a %-d %b %H:%M"
 }
 
