@@ -100,9 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias taqe="cd ~/enterprise"
-alias personal="cd ~/personal"
-alias taqe-cloud="docker exec -it taqe-gcloud bash"
+alias w="cd ~/enterprise"
+alias p="cd ~/projects"
 alias repair="sudo chown -R "${USER:-$(id -un)}" . "
 
 export NVM_DIR="$HOME/.nvm"
