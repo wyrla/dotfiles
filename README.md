@@ -2,7 +2,7 @@
 
 ## Instalando git, curl, firacode, utils, zhs e oh my zsh
 ```
-sudo add-apt-repository ppa:git-core/ppa && sudo apt update && apt upgrade; sudo apt install git-all curl fonts-firacode flameshot peek i3 zsh wget gpg apt-transport-https hsetroot xsettingsd compton -y; sudo apt update; sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo add-apt-repository ppa:git-core/ppa && sudo apt update && apt upgrade; sudo apt install git-all curl fonts-firacode flameshot peek i3 zsh wget gpg apt-transport-https hsetroot xsettingsd compton dunst -y; sudo apt update; sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## Instalando nvm
@@ -48,6 +48,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ln -s ~/dotfiles/.gitconfig  ~/.gitconfig
 ln -s ~/dotfiles/.zshrc  ~/.zshrc
 ln -s ~/dotfiles/vscode-settings.json ~/.config/Code/User/settings.json 
+ln -s ~/dotfiles/dunst-config ~/.config/dunst/dunstrc
 ```
 
 ## Tema? Catppuccin everywhere
