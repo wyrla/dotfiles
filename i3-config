@@ -184,24 +184,24 @@ bindsym $mod+r mode "resize"
 exec_always xrandr --fb 3840x1080 --output HDMI-1-0 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 0x0 --primary --rate 60.00 --reflect normal --rotate normal --output eDP-1 --crtc 1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 1920x0 --rate 60.01 --reflect normal --rotate normal 
 
 workspace 1 output primary
-exec --no-startup-id gnome-terminal --working-directory ~/workspace1
+exec --no-startup-id gnome-terminal
 assign [class="gnome-terminal"] 1
 
 workspace 2 output primary
-exec --no-startup-id google-chrome
-assign [class="Google-chrome"] 2
+exec --no-startup-id firefox
+assign [class="firefox"] 2
 
 workspace 3 output primary
-exec --no-startup-id discord
-assign [class="discord"] 3
+exec --no-startup-id Brave-browser
+assign [class="Brave-browser"] 3
 
 workspace 4 output primary
 exec --no-startup-id code
 assign [class="Code"] 4
 
 workspace 6 output eDP-1
-exec --no-startup-id firefox
-assign [class="firefox"] 6
+exec --no-startup-id obsidian
+assign [class="obsidian"] 6
 
 workspace 7 output eDP-1
 assign [class="Sublime_text"] 7
@@ -214,14 +214,12 @@ bindsym $super+l exec i3lock -i ~/.wallpaper.png
 
 
 # mode for leave menu
-set $leave_menu Leave Menu: (1)Lock, (2)Logout, (3)Suspend, (4)Hibernate, (5)Reboot, (6)Shutdown
+set $leave_menu Leave Menu: (1)Lock, (2)Logout, (3)Reboot, (4)Shutdown
 mode "$leave_menu" {
-    bindsym 1 exec --no-startup-id $myscripts/lock-session.sh, mode "default"
+    bindsym 1 exec --no-startup-id i3lock -i ~/.wallpaper.png, mode "default"
     bindsym 2 exec --no-startup-id i3-msg exit, mode "default"
-    bindsym 3 exec --no-startup-id systemctl suspend, mode "default"
-    bindsym 4 exec --no-startup-id systemctl hibernate, mode "default"
-    bindsym 5 exec --no-startup-id systemctl reboot, mode "default"
-    bindsym 6 exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym 3 exec --no-startup-id systemctl reboot, mode "default"
+    bindsym 4 exec --no-startup-id systemctl poweroff, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
