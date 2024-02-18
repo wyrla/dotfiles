@@ -1,0 +1,15 @@
+configuration {
+  modi: "drun,run";
+  terminal: "gnome-terminal";
+	font: "FiraCode";
+  timeout {
+    action: "kb-cancel";
+    delay:  0;
+  }
+  filebrowser {
+    directories-first: true;
+    sorting-method:    "name";
+  }
+}
+
+@theme "catppuccin-latte"
