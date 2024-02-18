@@ -181,37 +181,19 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Start assign commands
-exec_always xrandr --fb 3840x1080 --output HDMI-1-0 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 0x0 --primary --rate 60.00 --reflect normal --rotate normal --output eDP-1 --crtc 1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 1920x0 --rate 60.01 --reflect normal --rotate normal 
+# exec_always xrandr --fb 3840x1080 --output HDMI-1-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 0x0 --primary --rate 60.00 --reflect normal --rotate normal --output eDP-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 1920x0 --rate 60.01 --reflect normal --rotate normal 
 
 workspace 1 output primary
-exec --no-startup-id gnome-terminal
-assign [class="gnome-terminal"] 1
-
 workspace 2 output primary
-exec --no-startup-id firefox
-assign [class="firefox"] 2
-
 workspace 3 output primary
-exec --no-startup-id Brave-browser
-assign [class="Brave-browser"] 3
-
 workspace 4 output primary
-exec --no-startup-id code
-assign [class="Code"] 4
-
-workspace 6 output eDP-1
-exec --no-startup-id obsidian
-assign [class="obsidian"] 6
-
-workspace 7 output eDP-1
-assign [class="Sublime_text"] 7
+workspace 5 output primary
+workspace 6 output nonprimary
+workspace 7 output nonprimary
 
 bindsym Print exec flameshot gui
-bindsym $super+l exec i3lock -i ~/.wallpaper.png
-
 # Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
- include ~/dotfiles/i3bar-config
-
+include ~/dotfiles/i3bar-config
 
 # mode for leave menu
 set $leave_menu Leave Menu: (1)Lock, (2)Logout, (3)Reboot, (4)Shutdown
