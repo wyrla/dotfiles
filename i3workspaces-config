@@ -1,0 +1,15 @@
+assign [class="gnome-terminal"] 1
+assign [class="Brave-browser"] 2
+assign [class="Code"] 4
+assign [class="Studio 3T"] 5
+assign [class="Morgen"] 6
+assign [class="obsidian"] 6
+
+for_window [class="Brave-browser" title="T\w{3}"] move container to workspace 3
+
+exec --no-startup-id gnome-terminal
+exec --no-startup-id brave-browser --profile-directory='Profile 1'
+exec --no-startup-id brave-browser --profile-directory='Default'
+exec --no-startup-id code
+exec --no-startup-id obsidian
+exec --no-startup-id morgen

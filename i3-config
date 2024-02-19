@@ -181,7 +181,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Start assign commands
-# exec_always xrandr --fb 3840x1080 --output HDMI-1-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 0x0 --primary --rate 60.00 --reflect normal --rotate normal --output eDP-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 1920x0 --rate 60.01 --reflect normal --rotate normal 
+exec_always xrandr --fb 3840x1080 --output HDMI-1-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 0x0 --primary --rate 60.00 --reflect normal --rotate normal --output eDP-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 1920x0 --rate 60.01 --reflect normal --rotate normal 
 
 workspace 1 output primary
 workspace 2 output primary
@@ -190,6 +190,9 @@ workspace 4 output primary
 workspace 5 output primary
 workspace 6 output nonprimary
 workspace 7 output nonprimary
+
+# Include workspace configuration, what to open, where to open this application, etc
+include ~/dotfiles/i3workspaces-config
 
 bindsym Print exec flameshot gui
 # Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
