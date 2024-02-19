@@ -7,5 +7,8 @@
     "cSpell.language": "en,pt,pt_BR",
     "code-runner.clearPreviousOutput": true,
     "window.zoomLevel": 1,
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "scm.showIncomingChanges": "never",
+    "scm.showOutgoingChanges": "never",
+    "editor.rulers": [100]
 }
