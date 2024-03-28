@@ -2,6 +2,7 @@ configuration {
   modi: "drun,run";
   terminal: "gnome-terminal";
 	font: "FiraCode";
+	drun-display-format: "{name}";
   timeout {
     action: "kb-cancel";
     delay:  0;
