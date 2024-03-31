@@ -11,24 +11,10 @@
 
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 font pango:Fira Code 9
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --noforkC
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -53,11 +39,6 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
-# A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
-# There also is i3-dmenu-desktop which only displays applications shipping a
-# .desktop file. It is a wrapper around dmenu, so you need that installed.
-# bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -180,24 +161,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start assign commands
-exec_always xrandr --fb 3840x1080 --output HDMI-1-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 0x0 --primary --rate 60.00 --reflect normal --rotate normal --output eDP-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 1920x0 --rate 60.01 --reflect normal --rotate normal 
-
-workspace 1 output primary
-workspace 2 output primary
-workspace 3 output primary
-workspace 4 output primary
-workspace 5 output primary
-workspace 6 output nonprimary
-workspace 7 output nonprimary
-
-# Include workspace configuration, what to open, where to open this application, etc
-include ~/dotfiles/i3workspaces-config
-
-bindsym Print exec flameshot gui
-# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
-include ~/dotfiles/i3bar-config
-
 # mode for leave menu
 set $leave_menu Leave Menu: (1)Lock, (2)Logout, (3)Reboot, (4)Shutdown
 mode "$leave_menu" {
@@ -216,3 +179,17 @@ bindsym $mod+Shift+e mode "$leave_menu"
 exec --no-startup-id hsetroot -center ~/.wallpaper.png
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
+
+#custom bindsym
+bindsym Print exec flameshot gui
+
+# Monitors order
+exec_always xrandr --fb 3840x1080 --output HDMI-1-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 0x0 --primary --rate 60.00 --reflect normal --rotate normal --output eDP-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 1920x0 --rate 60.01 --reflect normal --rotate normal 
+
+
+# Include workspace configuration, what to open, where to open this application, etc
+include ~/dotfiles/i3/workspaces
+
+# Start i3bar to display a workspace bar (plus the system information i3status finds out, if available)
+include ~/dotfiles/i3/bar
+
