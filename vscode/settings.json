@@ -8,7 +8,13 @@
     "code-runner.clearPreviousOutput": true,
     "window.zoomLevel": 1,
     "workbench.sideBar.location": "right",
-    "scm.showIncomingChanges": "never",
-    "scm.showOutgoingChanges": "never",
-    "editor.rulers": [100]
+    "editor.rulers": [100],
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.tslint": true,
+          "source.fixAll.eslint": true
+        }
+    }
 }

@@ -12,6 +12,7 @@ extensions=(
     streetsidesoftware.code-spell-checker
     streetsidesoftware.code-spell-checker-portuguese-brazilian
     wakatime.vscode-wakatime
+    esbenp.prettier-vscode
 )
 
 if type -p code > /dev/null; then
