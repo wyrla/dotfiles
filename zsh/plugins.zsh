@@ -1,5 +1,5 @@
 plugins=(
-    dotenv
+    # dotenv
     git
     ssh-agent
     zsh-autosuggestions
