@@ -32,4 +32,10 @@ create_symlink () {
     fi
 }
 
-   
+scan() {
+    exec hp-scan -m color --dest=pdf,file;
+    # ask file name
+    # rename the jpg and pdf files
+    # move the documents to folder location
+    # print the file location
+}
