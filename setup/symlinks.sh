@@ -2,6 +2,7 @@
 source $HOME/dotfiles/setup/utils.sh
 
 create_symlink ~/dotfiles/.zshrc  ~/.zshrc
+create_symlink ~/dotfiles/i3/general  ~/.config/i3/config
 create_symlink ~/dotfiles/.gitconfig ~/.gitconfig
 create_symlink ~/dotfiles/vscode/settings.json ~/.config/Code/User/settings.json 
 create_symlink ~/dotfiles/dunst-config ~/.config/dunst/dunstrc

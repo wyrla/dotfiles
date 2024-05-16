@@ -1,5 +1,11 @@
 # Dotfiles #
 
+
+## Install git
+```
+apt-get install git
+```
+
 ## Clone dotfiles repo
 ```
 git clone https://github.com/wyrla/dotfiles.git
@@ -7,13 +13,12 @@ git clone https://github.com/wyrla/dotfiles.git
 
 ## Run the setup script
 ```
-dotf
 chmod +x ./setup.sh
 ./setup.sh
 ```
 
 ## Next steps
-- [ ] Create personal and enterprise folder
+- [x] Create personal and enterprise folder
 - [ ] Script to set enterprise git configuration
 - [ ] Add missing application into the setup application script
     - [ ] vscode
