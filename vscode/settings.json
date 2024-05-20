@@ -9,7 +9,7 @@
     "window.zoomLevel": 1,
     "workbench.sideBar.location": "right",
     "editor.rulers": [100],
-    "[javascript]": {
+    "[javascript][typescript]": {
         "editor.tabSize": 2,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.codeActionsOnSave": {
