@@ -33,3 +33,4 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-${ZSH:-
 # snap install 
 snap install telegram-desktop
 snap install blender --classic
+snap install vlc
