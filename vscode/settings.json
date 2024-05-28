@@ -16,5 +16,24 @@
           "source.fixAll.tslint": "explicit",
           "source.fixAll.eslint": "explicit"
         }
+    },
+    "launch": {
+      "version": "0.2.0",
+      "configurations": [
+        {
+          "name": "Attach to Process",
+          "type": "node",
+          "request": "attach",
+          "port": 9229
+        },
+        {
+          "name": "Run file",
+          "type": "node",
+          "request": "launch",
+          "runtimeExecutable": "node",
+          "runtimeVersion": "20.13.1",
+          "program": "${file}"
+        }
+      ]
     }
 }
