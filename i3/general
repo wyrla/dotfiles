@@ -184,7 +184,7 @@ exec --no-startup-id compton -b
 bindsym Print exec flameshot gui
 
 # Monitors order
-exec_always xrandr --fb 3840x1080 --output HDMI-1-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 0x0 --primary --rate 60.00 --reflect normal --rotate normal --output eDP-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 1920x0 --rate 60.01 --reflect normal --rotate normal 
+exec_always xrandr --fb 3840x1080 --output HDMI-1-0 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 0x0 --primary --rate 60.00 --reflect normal --rotate normal --output eDP-1 --gamma 1.0:1.0:1.0 --mode 1920x1080 --pos 1920x0 --rate 60.01 --reflect normal --rotate normal 
 
 
 # Include workspace configuration, what to open, where to open this application, etc

@@ -3,19 +3,21 @@ workspace 2 output primary
 workspace 3 output primary
 workspace 4 output primary
 workspace 5 output primary
-workspace 6 output nonprimary
-workspace 7 output nonprimary
+workspace 6 output eDP-1
+workspace 7 output eDP-1
+workspace 8 output eDP-1
 
 assign [class="gnome-terminal"] 1
 assign [class="Brave-browser"] 2
 assign [class="Code"] 4
-assign [class="Studio 3T"] 5
+assign [class="TelegramDesktop"] 5
 assign [class="obsidian"] 6
 
-for_window [class="enterprise"] move container to workspace 3
+# for_window [class="ee"] move container to workspace 3
 
 exec --no-startup-id gnome-terminal
-exec --no-startup-id brave-browser --profile-directory='Default' --class=enterprise
-exec --no-startup-id brave-browser --profile-directory='Profile 1'
+# exec --no-startup-id brave-browser --profile-directory='Default'
+# exec --no-startup-id brave-browser --profile-directory='Profile 1' --class=e
 exec --no-startup-id code
 exec --no-startup-id obsidian
+exec --no-startup-id telegram-desktop
