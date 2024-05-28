@@ -9,8 +9,6 @@
     last = log --name-status --oneline
 [core]
 	editor = vi
-[safe]
-	directory = /home/taqe/entrepise/**
 [init]
 	defaultBranch = main
 [push]
