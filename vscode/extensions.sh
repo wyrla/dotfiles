@@ -14,6 +14,7 @@ extensions=(
     wakatime.vscode-wakatime
     esbenp.prettier-vscode
     tomoki1207.pdf
+    Catppuccin.catppuccin-vsc-icons
 )
 
 if type -p code > /dev/null; then

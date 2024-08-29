@@ -35,5 +35,6 @@
           "program": "${file}"
         }
       ]
-    }
+    },
+    "workbench.iconTheme": "catppuccin-latte" 
 }
