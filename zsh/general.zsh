@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -127,4 +128,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+touch ~/dotfiles/zsh/_env.zsh
 source ~/dotfiles/zsh/_env.zsh
