@@ -8,12 +8,15 @@ touch $log_file
 
 install_application () {
     local name=$1
+    local show_log="${2:-true}"
     sudo apt-get install $name -y;
-    if type -p $name > /dev/null; then
-        echo "${GREEN}$name succeed" >> $log_file
-    else
-        echo "${RED}$name installation gone wrong" >> $log_file
-    fi    
+    if $show_log; then 
+        if type -p $name > /dev/null; then
+            echo "${GREEN}$name succeed" >> $log_file
+        else
+            echo "${RED}$name installation gone wrong" >> $log_file
+        fi   
+    fi
 }
 
 installation_result () {
