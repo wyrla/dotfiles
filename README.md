@@ -22,9 +22,9 @@ chmod +x ./setup.sh
 - [ ] Script to set enterprise git configuration
 - [ ] Add missing application into the setup application script
     - [ ] vscode
-    - [ ] brave
+    - [x] brave
     - [ ] obsidian
-    - [ ] telegram
+    - [x] telegram
 - [ ] Add wallpaper image
 - [ ] Create vscode's workspace configuration file
 - [ ] Set catppuccin theme on terminal
