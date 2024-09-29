@@ -25,14 +25,26 @@ installation_result () {
     rm $log_file
 }
 
+simple_symlink () {
+    local dotfile_symlink=$1
+    local installation_symlink=$2
+    ln -s $dotfile_symlink $installation_symlink
+    echo "${GREEN}$dotfile_symlink symbolic link created!" >> $log_file
+}
+
 create_symlink () {
     local dotfile_symlink=$1
     local installation_symlink=$2
-    if [ -f $HOME/.zshrc ]; then
+
+    if [ -f $installation_symlink ]; then
         rm -rf $installation_symlink
-        ln -s $dotfile_symlink $installation_symlink
-    echo "${GREEN}$dotfile_symlink symbolic link created!" >> $log_file
-    fi
+        simple_symlink $dotfile_symlink $installation_symlink
+    else
+        echo 'create dir' 
+        local dir=$(dirname "$installation_symlink")
+        mkdir -p $dir
+        simple_symlink $dotfile_symlink $installation_symlink
+    fi 
 }
 
 scan() {
