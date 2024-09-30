@@ -36,5 +36,10 @@
         }
       ]
     },
-    "workbench.iconTheme": "catppuccin-latte" 
+    "workbench.iconTheme": "catppuccin-latte",
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+      "javascript": "node",
+      "typescript": "node -r ts-node/register"
+    }
 }

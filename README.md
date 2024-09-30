@@ -25,7 +25,7 @@ chmod +x ./setup.sh
     - [x] brave
     - [ ] obsidian
     - [x] telegram
-- [ ] Add wallpaper image
+- [x] Add wallpaper image
 - [ ] Create vscode's workspace configuration file
 - [ ] Set catppuccin theme on terminal
 - [ ] Setup brave configuration
