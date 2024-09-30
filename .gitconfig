@@ -8,7 +8,7 @@
 [alias]
     last = log --name-status --oneline
 [core]
-	editor = vi
+	editor = nvim
 [init]
 	defaultBranch = main
 [push]

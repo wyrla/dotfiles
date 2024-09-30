@@ -130,3 +130,5 @@ source $ZSH/oh-my-zsh.sh
 
 touch ~/dotfiles/zsh/_env.zsh
 source ~/dotfiles/zsh/_env.zsh
+
+export PATH="$PATH:/opt/nvim-linux64/bin"
