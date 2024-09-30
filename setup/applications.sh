@@ -17,6 +17,7 @@ install_application hsetroot
 install_application xsettingsd
 install_application compton
 install_application dunst
+install_application blueman
 
 sudo add-apt-repository universe -y
 install_application fonts-firacode false
