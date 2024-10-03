@@ -16,7 +16,7 @@ assign [class="obsidian"] 6
 # for_window [class="ee"] move container to workspace 3
 
 exec --no-startup-id gnome-terminal
-# exec --no-startup-id brave-browser --profile-directory='Default'
+exec --no-startup-id brave-browser --profile-directory='Default'
 # exec --no-startup-id brave-browser --profile-directory='Profile 1' --class=e
 exec --no-startup-id code
 exec --no-startup-id obsidian

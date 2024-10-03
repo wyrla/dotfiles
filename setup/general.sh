@@ -5,13 +5,8 @@ nvm install --lts
 
 corepack enable pnpm 
 
-# pnpm
-export PNPM_HOME="/home/void/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+touch ~/dotfiles/zsh/_env.zsh
+source ~/dotfiles/zsh/_env.zsh
 
 # catppuccin gnome theme
 curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.3.0/install.py | python3 -
