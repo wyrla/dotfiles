@@ -5,7 +5,7 @@
     "editor.wordWrap": "on",
     "editor.bracketPairColorization.enabled": true,
     "cSpell.language": "en,pt,pt_BR",
-    "code-runner.clearPreviousOutput": true,
+    "code-runner.clearPreviousOutput": false,
     "window.zoomLevel": 1,
     "workbench.sideBar.location": "right",
     "editor.rulers": [100],
@@ -40,6 +40,6 @@
     "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
       "javascript": "node",
-      "typescript": "node -r ts-node/register"
+      "typescript": "node -r ts-node/register --env-file=.env"
     }
 }
