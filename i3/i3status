@@ -5,18 +5,10 @@ general {
         interval = 1
 }
 
-order += "cpu_temperature 0"
 order += "memory"
-order += "disk /home"
-order += "wireless wlp2s0"
+order += "wireless wlp11s0"
 order += "volume master"
-order += "battery 1"
 order += "tztime local"
-
-cpu_temperature 0 {
-        format = "CPU %degrees °C "
-        path = "/sys/class/thermal/thermal_zone4/temp"
-}
 
 memory {
         format = "RAM %used"
@@ -24,17 +16,13 @@ memory {
         format_degraded = "MEMORY: %free"
 }
 
-disk "/home" {
-        format = "💾 %free"
-}
-
-wireless wlp2s0 {
+wireless wlp11s0 {
         format_up = "📡 (%quality at %essid, %bitrate)"
         format_down = "W: down"
 }
 
 volume master {
-        format = "🔊 %volume"
+        format = "🔊 %volume "
         format_muted = "🔇"
         device = "default"
         mixer = "Master"
@@ -42,19 +30,7 @@ volume master {
 }
 
 
-battery 1 {
-        format = "%status %percentage"
-        format_down = "No battery"
-        status_chr = "🔌"
-        status_bat = "🔋"
-        status_full = "🔋"
-        path = "/sys/class/power_supply/BAT%d/uevent"
-        low_threshold = 50
-}
-
-
 tztime local {
-        format = "⌛ %time"
-        format_time = "%a %-d %b %H:%M"
+        // format = "⌛ %time"
+        format = "%a %-d %b %H:%M"
 }
-
