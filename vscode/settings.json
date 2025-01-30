@@ -1,45 +1,65 @@
 {
-    "workbench.colorTheme": "Catppuccin Latte",
-    "editor.fontFamily": "'Fira Code'",
-    "editor.fontLigatures": true,
-    "editor.wordWrap": "on",
-    "editor.bracketPairColorization.enabled": true,
-    "cSpell.language": "en,pt,pt_BR",
-    "code-runner.clearPreviousOutput": false,
-    "window.zoomLevel": 1,
-    "workbench.sideBar.location": "right",
-    "editor.rulers": [100],
-    "[javascript][typescript][jsonc][json][typescriptreact]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": {
-          "source.fixAll.tslint": "explicit",
-          "source.fixAll.eslint": "explicit"
-        }
-    },
-    "launch": {
-      "version": "0.2.0",
-      "configurations": [
-        {
-          "name": "Attach to Process",
-          "type": "node",
-          "request": "attach",
-          "port": 9229
-        },
-        {
-          "name": "Run file",
-          "type": "node",
-          "request": "launch",
-          "runtimeExecutable": "node",
-          "runtimeVersion": "20.13.1",
-          "program": "${file}"
-        }
-      ]
-    },
-    "workbench.iconTheme": "catppuccin-latte",
-    "code-runner.runInTerminal": true,
-    "code-runner.executorMap": {
-      "javascript": "node",
-      "typescript": "node -r ts-node/register --env-file=.env"
+  "workbench.colorTheme": "Catppuccin Latte",
+  "editor.fontFamily": "'Fira Code'",
+  "editor.fontLigatures": true,
+  "editor.wordWrap": "on",
+  "editor.bracketPairColorization.enabled": true,
+  "cSpell.language": "en,pt,pt_BR",
+  "code-runner.clearPreviousOutput": false,
+  "window.zoomLevel": 1,
+  "workbench.sideBar.location": "right",
+  "editor.rulers": [100],
+  "[javascript][typescript][jsonc][json][typescriptreact][html]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.tslint": "explicit",
+      "source.fixAll.eslint": "explicit"
     }
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "RUN JS",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "node",
+        "runtimeVersion": "22.11.0",
+        "program": "${file}"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "TS - LAUNCH",
+        "program": "${file}",
+        "runtimeArgs": ["-r", "ts-node/register", "--env-file=.env"],
+        "runtimeExecutable": "node",
+        "runtimeVersion": "22.11.0"
+      },
+      {
+        "type": "node-terminal",
+        "request": "launch",
+        "name": "Debug API - LAUNCH",
+        "command": "npm run dev"
+      },
+      {
+        "type": "node",
+        "request": "attach",
+        "name": "Debug API - ATTACH",
+        "restart": true,
+        "processId": "${command:PickProcess}",
+        "skipFiles": ["<node_internals>/**"]
+      }
+    ]
+  },
+  "workbench.iconTheme": "catppuccin-latte",
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "javascript": "node",
+    "typescript": "node -r ts-node/register --env-file=.env"
+  },
+  "gitlens.views.scm.grouped.views": {
+    "stashes": false
+  }
 }
