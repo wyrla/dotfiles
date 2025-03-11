@@ -10,3 +10,4 @@ create_symlink ~/dotfiles/i3/i3status  ~/.config/i3status/config
 
 ln -s ~/dotfiles/.zshrc  ~/.zshrc
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/.bash_profile  ~/.bash_profile
