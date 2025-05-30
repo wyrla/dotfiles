@@ -29,7 +29,7 @@ bar {
 
         background $crust 
         statusline $text
-        separator $crust
+        separator $lavender
 
         # colour of border, background, and text
         focused_workspace   $crust $pink $mantle

@@ -6,23 +6,27 @@ general {
 }
 
 order += "memory"
+order += "disk /"
 order += "wireless wlp11s0"
 order += "volume master"
 order += "tztime local"
 
 memory {
-        format = "RAM %used"
+        format = "📝 %used / %total"
         threshold_degraded = "10%"
-        format_degraded = "MEMORY: %free"
+}
+
+disk "/" {
+        format = "💽 %avail"
 }
 
 wireless wlp11s0 {
-        format_up = "📡 (%quality at %essid, %bitrate)"
+        format_up = "📡%quality at %essid, %bitrate"
         format_down = "W: down"
 }
 
 volume master {
-        format = "🔊 %volume "
+        format = "🔊 %volume"
         format_muted = "🔇"
         device = "default"
         mixer = "Master"
@@ -31,6 +35,6 @@ volume master {
 
 
 tztime local {
-        // format = "⌛ %time"
-        format = "%a %-d %b %H:%M"
+        // format_time = "⌛ %time"
+        format = "⌛ %a %-d %b %H:%M"
 }
