@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
-source $HOME/dotfiles/setup/applications.sh
-source $HOME/dotfiles/setup/symlinks.sh
-source $HOME/.zshrc
-source $HOME/dotfiles/setup/general.sh
+set -euo pipefail
 
-source $HOME/dotfiles/vscode/extensions.sh
+# Detect dotfiles directory from script location
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export DOTFILES_DIR
+
+source "$DOTFILES_DIR/setup/applications.sh"
+source "$DOTFILES_DIR/setup/symlinks.sh"
+source "$HOME/.zshrc"
+source "$DOTFILES_DIR/setup/general.sh"
+
+source "$DOTFILES_DIR/vscode/extensions.sh"

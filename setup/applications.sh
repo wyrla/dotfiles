@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source $HOME/dotfiles/setup/utils.sh
+source "${DOTFILES_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}/setup/utils.sh"
 
 sudo apt update && sudo apt upgrade -y
 

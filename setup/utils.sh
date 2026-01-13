@@ -3,6 +3,11 @@
 GREEN=$'\e[32m'
 RED=$'\e[31m'
 
+if [ -z "${DOTFILES_DIR:-}" ]; then
+    DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+fi
+export DOTFILES_DIR
+
 log_file=~/install_progress_log.txt
 touch $log_file
 
