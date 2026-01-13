@@ -30,32 +30,17 @@ installation_result () {
     rm $log_file
 }
 
-simple_symlink () {
-    local dotfile_symlink=$1
-    local installation_symlink=$2
-    ln -s $dotfile_symlink $installation_symlink
-    echo "${GREEN}$dotfile_symlink symbolic link created!" >> $log_file
-}
-
 create_symlink () {
-    local dotfile_symlink=$1
-    local installation_symlink=$2
+    local source="$1"
+    local target="$2"
 
-    if [ -f $installation_symlink ]; then
-        rm -rf $installation_symlink
-        simple_symlink $dotfile_symlink $installation_symlink
-    else
-        echo 'create dir' 
-        local dir=$(dirname "$installation_symlink")
-        mkdir -p $dir
-        simple_symlink $dotfile_symlink $installation_symlink
-    fi 
-}
+    mkdir -p "$(dirname "$target")"
 
-scan() {
-    exec hp-scan -m color --dest=pdf,file;
-    # ask file name
-    # rename the jpg and pdf files
-    # move the documents to folder location
-    # print the file location
+    # Remove existing file, symlink, or directory
+    if [ -e "$target" ] || [ -L "$target" ]; then
+        rm -rf "$target"
+    fi
+
+    ln -s "$source" "$target"
+    echo "${GREEN}$source -> $target created" >> "$log_file"
 }
