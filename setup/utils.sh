@@ -8,26 +8,26 @@ if [ -z "${DOTFILES_DIR:-}" ]; then
 fi
 export DOTFILES_DIR
 
-log_file=~/install_progress_log.txt
-touch $log_file
+log_file="$HOME/install_progress_log.txt"
+touch "$log_file"
 
 install_application () {
-    local name=$1
+    local name="$1"
     local show_log="${2:-true}"
-    sudo apt-get install $name -y;
-    if $show_log; then 
-        if type -p $name > /dev/null; then
-            echo "${GREEN}$name succeed" >> $log_file
+    sudo apt-get install "$name" -y
+    if $show_log; then
+        if type -p "$name" > /dev/null; then
+            echo "${GREEN}$name succeed" >> "$log_file"
         else
-            echo "${RED}$name installation gone wrong" >> $log_file
-        fi   
+            echo "${RED}$name installation gone wrong" >> "$log_file"
+        fi
     fi
 }
 
 installation_result () {
-    echo -e "Aftermatch: \n"
-    cat $log_file
-    rm $log_file
+    echo -e "Aftermath: \n"
+    cat "$log_file"
+    rm "$log_file"
 }
 
 create_symlink () {
