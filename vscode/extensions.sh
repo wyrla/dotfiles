@@ -4,11 +4,8 @@ extensions=(
     catppuccin.catppuccin-vsc
     formulahendry.code-runner
     gruntfuggly.todo-tree
-    mechatroner.rainbow-csv
     eamodio.gitlens
     mhutchie.git-graph
-    mongodb.mongodb-vscode
-    smcpeak.default-keys-windows
     streetsidesoftware.code-spell-checker
     streetsidesoftware.code-spell-checker-portuguese-brazilian
     wakatime.vscode-wakatime

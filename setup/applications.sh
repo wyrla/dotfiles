@@ -23,12 +23,9 @@ sudo add-apt-repository universe -y
 install_application fonts-firacode false
 
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 # Install latest NVM version
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-
 # custom zsh plugins (skip if already installed)
 ZSH_PLUGINS_DIR="${ZSH_CUSTOM:-${ZSH:-$HOME/.oh-my-zsh}/custom}/plugins"
 
@@ -41,13 +38,11 @@ ZSH_PLUGINS_DIR="${ZSH_CUSTOM:-${ZSH:-$HOME/.oh-my-zsh}/custom}/plugins"
 [ -d "$ZSH_PLUGINS_DIR/zsh-autosuggestions" ] || \
     git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_PLUGINS_DIR/zsh-autosuggestions"
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
+# curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.tar.gz
+# sudo rm -rf /opt/nvim
+# sudo tar -C /opt -xzf nvim-linux-arm64.tar.gz
 
 sudo apt update && sudo apt upgrade -y
-
-install_application brave-browser
 
 # snap install 
 snap install telegram-desktop
